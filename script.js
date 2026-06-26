@@ -64,7 +64,8 @@ if(pv){
     let html='';
     html+=list.map(n=>`<img loading="lazy" src="${imgURL(n)}" alt="" />`).join('');
     if(vid) html+=`<video class="pv-vid" controls playsinline preload="metadata" src="${vidURL(vid)}"></video>`;
-    html+='<div class="pv-end">— 完 · END —</div>';
+    const pname=row.dataset.name||'';
+    html+=`<div class="pv-end">— 完 · END —<span class="pv-copy">© 2022–2026 叶莹滢 Ye Yingying｜本作品《${pname}》著作权归作者所有，保留一切权利<br/>All works © Ye Yingying. All Rights Reserved. 未经许可不得转载或用于商业用途</span></div>`;
     stack.innerHTML=html;
     pv.classList.add('open'); document.body.style.overflow='hidden'; stack.scrollTop=0;
   }
